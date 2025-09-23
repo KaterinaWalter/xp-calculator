@@ -11,6 +11,7 @@
   --city-purple: #50435D;
   --city-dark: #0A2830;
   --city-darkest: #05141A;
+  --my-radius: 0.25rem;
 }
 
 body {
@@ -50,7 +51,7 @@ h1, h2, h3, th {
 }
 
 table .quests-label, table .missions-label {
-  font-size: 2em;
+  font-size: 2.2em;
   text-shadow: 1px 1px 1px var(--city-darkest);
 }
 
@@ -69,31 +70,35 @@ footer small {
 }
 
 input {
-  width: 50px !important;
+  width: 30px !important;
   border-color: var(--city-dark) !important;
-  border-radius: 0.25rem !important;
+  border-radius: var(--my-radius) !important;
   border-style: solid !important;
   border-width: 1px !important; 
 }
+
 .total-cards {
-  width: 10px;
+  width: 15px;
   display: inline-block;
-  color: var(--city-pink-dark);
 }
 .earned-xp, .total-xp {
-  width: 30px;
+  width: 35px;
   display: inline-block;
 }
-.total-xp {
+.total-cards, .total-xp {
   color: var(--city-pink-dark);
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
-.earned-xp {
+.earned-cards, .earned-xp {
   color: var(--city-purple);
-  border-radius: 0.25rem;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .assignment-label {
   width: 300px;
 }
+
 thead {
   line-height: 1em;
 }
@@ -174,4 +179,11 @@ th {
 
 .debug {
   border: 2px solid red;
+}
+
+@media (max-width: 560px) { 
+  .assignment-label {
+    width: 225px;
+    font-size: 0.75em;
+  }
 }

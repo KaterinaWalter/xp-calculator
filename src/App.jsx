@@ -26,7 +26,7 @@ const assignments = [
     totalCards: 3,
   },
   {
-    title: "Design or Research Projects",
+    title: "Design/Research Projects",
     type: "Mission",
     totalCards: 4,
   },
@@ -110,8 +110,8 @@ function App() {
             <thead>
               <tr>
                 <th><span className="quests-label">Quests</span></th>
-                <th>Earned<br></br>Cards</th>
-                <th>Earned<br></br>XP</th>
+                <th><span className="table-header">Earned<br></br>Cards</span></th>
+                <th><span className="table-header">Earned<br></br>XP</span></th>
               </tr>
             </thead>
             <tbody>
@@ -153,8 +153,8 @@ function App() {
             <thead>
               <tr>
                 <th><span className="missions-label">Missions</span></th>
-                <th>Earned<br></br>Cards</th>
-                <th>Earned<br></br>XP</th>
+                <th><span className="table-header">Earned<br></br>Cards</span></th>
+                <th><span className="table-header">Earned<br></br>XP</span></th>
               </tr>
             </thead>
             <tbody>
