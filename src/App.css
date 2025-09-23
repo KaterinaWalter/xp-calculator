@@ -23,7 +23,7 @@ body {
 }
 
 .main-container {
-  background-image: url("src/assets/sunset-city.gif");
+  background-image: url("./assets/sunset-city.gif");
   background-size: contain;
   background-repeat: repeat-x;
 }
