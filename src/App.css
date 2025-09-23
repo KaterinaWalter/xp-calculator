@@ -137,7 +137,7 @@ th {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 5px solid var(--city-purple);
+  border: 5px solid var(--city-darkest);
 }
 
 .results-container {
@@ -145,7 +145,7 @@ th {
   padding-bottom: 0px;
   padding-left: 6px;
   padding-right: 6px;
-  background: var(--city-purple);
+  background: var(--city-darkest);
   color: white;
   font-size: 0.8em;
   font-weight: 700;
@@ -156,7 +156,8 @@ th {
 
 .total-xp-label {
   font-size: 1.8em;
-  text-shadow: 1px 1px 1px var(--city-darkest);
+  text-shadow: 1px 1px 1px white;
+  color: var(--city-purple);
   font-family: "Pixelify Sans", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -164,7 +165,7 @@ th {
 .total-xp-value {
   font-size: 1.5em;
   font-weight: 700;
-  color: var(--sky-orange);
+  color: white;
   display: inline-block;
   padding: 1px 8px;
   width: 60px;
