@@ -1,20 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+12&family=Jacquard+24&family=Pixelify+Sans:wght@400..700&family=Silkscreen:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
-  --purple: #6f57dd;
+  --sky-purple: #AB93C9;
+  --sky-pink: #CA90BD;
+  --sky-pink-orange: #D698B9;
+  --sky-orange: #FFBEA4;
+  --city-pink-light: #EC8E9E;
+  --city-pink: #CD6B8E;
+  --city-pink-dark: #904B6B;
+  --city-purple: #50435D;
+  --city-dark: #0A2830;
+  --city-darkest: #05141A;
 }
 
 body {
-  background-color: rgb(149, 197, 208);
+  background-color: var(--city-darkest);
   text-align: center;
-  font-family: sans-serif !important;
+  font-family: "Space Mono", monospace !important;
+  font-weight: 400;
+  font-style: normal;
 }
 
-h1, h2, h3, th {
-  font-family: sans-serif !important;
-  color: var(--purple);
+.main-container {
+  background-image: url("src/assets/sunset-city.gif");
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
+h1, h3, th {
+  color: var(--city-darkest) !important;
+  font-family: "Pixelify Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  color: var(--city-dark) !important;
+  font-family: "Pixelify Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+footer {
+  color: var(--sky-pink);
+}
+
+a {
+  color: var(--city-pink);
+  text-decoration: none;
 }
 
 .tables-container {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 .tables-container table {

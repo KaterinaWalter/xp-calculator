@@ -83,100 +83,106 @@ function App() {
   
   return (
     <div className="App d-flex flex-column min-vh-100">
-
-      <Header />
       
-      <div className="container-fluid">
-      <div className="tables-container row">
-        <table border="1" cellPadding="8" className="quests-table col-md-6">
-          <thead>
-            <tr>
-              <th>Quests<br></br><em>Required</em></th>
-              <th>Earned<br></br>Cards</th>
-              <th>Earned<br></br>XP</th>
-            </tr>
-          </thead>
-          <tbody>
-            {assignments
-              .map((assignment, index) => ({ ...assignment, index }))
-              .filter((assignment) => assignment.type === "Quest")
-              .map((assignment) => {
-                const totalXP = assignment.totalCards * 50;
-                const earned = earnedCards[assignment.index];
-                const earnedXP = calcEarnedXP(earned);
-                return (
-                  <tr key={assignment.index}>
-                    <td>{assignment.title}</td>
-                    <td>
-                      <span className="earned-cards">
-                        <input
-                          type="number"
-                          min="0"
-                          max={assignment.totalCards}
-                          value={earned}
-                          onChange={(e) => handleChange(assignment.index, e.target.value)}
-                          style={{ width: "60px" }}
-                        />
-                      </span>
-                      <span className="total-cards"> / {assignment.totalCards}</span>
-                    </td>
-                    <td>
-                      <span className="earned-xp">{earnedXP}</span>
-                      <span className="total-xp"> / {totalXP}</span>
-                    </td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
+      <div className="main-container container-fluid">
+        
+        <Header />
 
-        <table border="1" cellPadding="8" className="missions-table col-md-5">
-          <thead>
-            <tr>
-              <th>Missions<br></br><em>Optional</em></th>
-              <th>Earned<br></br>Cards</th>
-              <th>Earned<br></br>XP</th>
-            </tr>
-          </thead>
-          <tbody>
-            {assignments
-              .map((assignment, index) => ({ ...assignment, index }))
-              .filter((assignment) => assignment.type === "Mission")
-              .map((assignment) => {
-                const totalXP = assignment.totalCards * 50;
-                const earned = earnedCards[assignment.index];
-                const earnedXP = calcEarnedXP(earned);
-                return (
-                  <tr key={assignment.index}>
-                    <td>{assignment.title}</td>
-                    <td>
-                      <span className="earned-cards">
-                        <input
-                          type="number"
-                          min="0"
-                          max={assignment.totalCards}
-                          value={earned}
-                          onChange={(e) => handleChange(assignment.index, e.target.value)}
-                          style={{ width: "60px" }}
-                        />
-                      </span>
-                      <span className="total-cards"> / {assignment.totalCards}</span>
-                    </td>
-                    <td>
-                      <span className="earned-xp">{earnedXP}</span>
-                      <span className="total-xp"> / {totalXP}</span>
-                    </td>
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
-      </div>
-      </div>
+        <div className="tables-container row">
+          
+          <table className="quests-table col-md-6">
+            <thead>
+              <tr>
+                <th>Quests<br></br><em>Required</em></th>
+                <th>Earned<br></br>Cards</th>
+                <th>Earned<br></br>XP</th>
+              </tr>
+            </thead>
+            <tbody>
+              {assignments
+                .map((assignment, index) => ({ ...assignment, index }))
+                .filter((assignment) => assignment.type === "Quest")
+                .map((assignment) => {
+                  const totalXP = assignment.totalCards * 50;
+                  const earned = earnedCards[assignment.index];
+                  const earnedXP = calcEarnedXP(earned);
+                  return (
+                    <tr key={assignment.index}>
+                      <td>{assignment.title}</td>
+                      <td>
+                        <span className="earned-cards">
+                          <input
+                            type="number"
+                            min="0"
+                            max={assignment.totalCards}
+                            value={earned}
+                            onChange={(e) => handleChange(assignment.index, e.target.value)}
+                            style={{ width: "60px" }}
+                          />
+                        </span>
+                        <span className="total-cards"> / {assignment.totalCards}</span>
+                      </td>
+                      <td>
+                        <span className="earned-xp">{earnedXP}</span>
+                        <span className="total-xp"> / {totalXP}</span>
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
+       
+          <table className="missions-table col-md-6">
+            <thead>
+              <tr>
+                <th>Missions<br></br><em>Optional</em></th>
+                <th>Earned<br></br>Cards</th>
+                <th>Earned<br></br>XP</th>
+              </tr>
+            </thead>
+            <tbody>
+              {assignments
+                .map((assignment, index) => ({ ...assignment, index }))
+                .filter((assignment) => assignment.type === "Mission")
+                .map((assignment) => {
+                  const totalXP = assignment.totalCards * 50;
+                  const earned = earnedCards[assignment.index];
+                  const earnedXP = calcEarnedXP(earned);
+                  return (
+                    <tr key={assignment.index}>
+                      <td>{assignment.title}</td>
+                      <td>
+                        <span className="earned-cards">
+                          <input
+                            type="number"
+                            min="0"
+                            max={assignment.totalCards}
+                            value={earned}
+                            onChange={(e) => handleChange(assignment.index, e.target.value)}
+                            style={{ width: "60px" }}
+                          />
+                        </span>
+                        <span className="total-cards"> / {assignment.totalCards}</span>
+                      </td>
+                      <td>
+                        <span className="earned-xp">{earnedXP}</span>
+                        <span className="total-xp"> / {totalXP}</span>
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
+     
+        </div>
 
-      <div className="results-container">
-        <p>Total Earned XP: {totalEarnedXP}</p>
-        <p>Total Possible XP: {totalPossibleXP}</p>
+        <br></br>
+
+        <div className="results-container">
+          <p>Total Earned XP: {totalEarnedXP}</p>
+          <p>Total Possible XP: {totalPossibleXP}</p>
+        </div>
+
       </div>
 
       <Footer />
