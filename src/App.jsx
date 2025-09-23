@@ -93,7 +93,7 @@ function App() {
           <table className="quests-table col-md-6">
             <thead>
               <tr>
-                <th>Quests<br></br><em>Required</em></th>
+                <th><span className="quests-label">Quests</span></th>
                 <th>Earned<br></br>Cards</th>
                 <th>Earned<br></br>XP</th>
               </tr>
@@ -135,7 +135,7 @@ function App() {
           <table className="missions-table col-md-6">
             <thead>
               <tr>
-                <th>Missions<br></br><em>Optional</em></th>
+                <th><span className="missions-label">Missions</span></th>
                 <th>Earned<br></br>Cards</th>
                 <th>Earned<br></br>XP</th>
               </tr>

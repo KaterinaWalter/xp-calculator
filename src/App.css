@@ -16,6 +16,7 @@
 body {
   background-color: var(--city-darkest);
   text-align: center;
+  color: var(--city-dark);
   font-family: "Space Mono", monospace !important;
   font-weight: 400;
   font-style: normal;
@@ -27,29 +28,46 @@ body {
   background-repeat: repeat-x;
 }
 
-h1, h3, th {
-  color: var(--city-darkest) !important;
+h1, h2, h3, th {
   font-family: "Pixelify Sans", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-style: normal;
+  font-style: bold;
 }
 
-h2 {
-  color: var(--city-dark) !important;
-  font-family: "Pixelify Sans", sans-serif !important;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+.page-heading {
+  color: var(--city-darkest);
+}
+
+.page-description {
+  background: var(--city-dark);
+  color: white;
+}
+
+.quests-label {
+  font-family: "Jacquard 24", serif;
+  color: var(--sky-purple);
+  font-size: 1.4em;
+}
+
+.missions-label {
+  font-family: "Jacquard 24", serif;
+  color: var(--sky-pink);
+  font-size: 1.4em;
 }
 
 footer {
-  color: var(--sky-pink);
+  color: var(--sky-purple);
+  font-size: 0.75em;
+  line-height: 0.75em;
 }
 
 a {
-  color: var(--city-pink);
-  text-decoration: none;
+  color: var(--sky-pink);
+}
+
+footer small {
+  font-size: 0.6em;
 }
 
 .tables-container {
@@ -68,22 +86,3 @@ a {
   border-radius: 8px;
 }
 
-/* 
-
-.page-heading {
-}
-
-.course-heading {
-}
-
-.app-description {
-}
-
-.quests-label {
-}
-
-.missions-label {
-}
-
-
-*/
