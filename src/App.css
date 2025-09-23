@@ -179,4 +179,7 @@ th {
     width: 160px;
     font-size: 0.75em;
   }
+  .earned-xp, .total-xp {
+    width: 30px;
+  }
  }
