@@ -1,31 +1,50 @@
-.App {
+:root {
+  --purple: #6f57dd;
+}
+
+body {
+  background-color: rgb(149, 197, 208);
   text-align: center;
+  font-family: sans-serif !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, th {
+  font-family: sans-serif !important;
+  color: var(--purple);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.tables-container {
+  width: 80%;
+  margin: auto;
+}
+.tables-container table {
+  background: whitesmoke;
 }
 
-.App-link {
-  color: #61dafb;
+.results-container {
+  width: 40%;
+  margin: auto;
+  background: whitesmoke;
+  border: 2px solid var(--purple);
+  border-radius: 8px;
 }
 
-.heart {
-  color: #ff0000;
+/* 
+
+.page-heading {
 }
 
-.small {
-  font-size: 0.75rem;
+.course-heading {
 }
+
+.app-description {
+}
+
+.quests-label {
+}
+
+.missions-label {
+}
+
+
+*/
