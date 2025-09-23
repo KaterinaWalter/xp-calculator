@@ -179,9 +179,9 @@ th {
   border: 2px solid red;
 }
 
-@media (max-width: 560px) { 
-  .assignment-label {
-    width: 225px;
+@media (max-width: 575.98px) { 
+    .assignment-label {
+    width: 160px;
     font-size: 0.75em;
   }
-}
+ }
