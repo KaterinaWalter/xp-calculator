@@ -164,15 +164,10 @@ th {
 .total-xp-value {
   font-size: 1.5em;
   font-weight: 700;
-  border-color: var(--city-dark) !important;
-  border-radius: 0.25rem !important;
-  border-style: solid !important;
-  border-width: 1px !important; 
-  color: var(--city-purple);
-  background: white;
+  color: var(--sky-orange);
   display: inline-block;
   padding: 1px 8px;
-  width: 80px;
+  width: 60px;
 }
 
 .debug {
