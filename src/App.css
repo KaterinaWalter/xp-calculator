@@ -87,16 +87,14 @@ input {
 }
 .total-cards, .total-xp {
   color: var(--city-pink-dark);
-  padding-top: 0px;
-  padding-bottom: 0px;
 }
 .earned-cards, .earned-xp {
   color: var(--city-purple);
-  padding-top: 0px;
-  padding-bottom: 0px;
 }
 .assignment-label {
   width: 300px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 thead {
