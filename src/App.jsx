@@ -6,22 +6,22 @@ import Footer from './components/common/Footer';
 // Quests (REQUIRED) & Missions (OPTIONAL)
 const assignments = [
   {
-    title: "Final Game Design Challenge",
+    title: "Final Game Project",
     type: "Quest",
     totalCards: 9,
   },
   {
-    title: "Lightning Design",
+    title: "Lightning Design Challenge",
     type: "Quest",
     totalCards: 6,
   },
   {
-    title: "Play Analyses Video",
+    title: "Play Analysis Video",
     type: "Quest",
     totalCards: 4,
   },
   {
-    title: "A Slice of Everyday Life Pitch",
+    title: "Slice of Life Pitch",
     type: "Quest",
     totalCards: 3,
   },
@@ -88,9 +88,25 @@ function App() {
         
         <Header />
 
-        <div className="tables-container row">
+        <div className="info-section row">
+            <div className="description-container col-8">
+              <p>
+              Enter your <strong>earned cards</strong> from completing required <span className="quests-label">Quests </span>
+              and optional <span className="missions-label">Missions</span> below to calculate your <strong>Total XP</strong> for the course!
+              <em> Each card grants 50 XP.</em>
+              </p>
+            </div>
+            <div className="results-container col-4">
+              <p><span className="total-xp-label">TOTAL XP: </span>
+              <span className="total-xp-value">{totalEarnedXP}</span>
+              </p>
+            </div>
+        </div>
+
+        <div className="tables-container row gx-3 gy-1">
           
-          <table className="quests-table col-md-6">
+          <div className="col-md-6">
+          <table className="quests-table">
             <thead>
               <tr>
                 <th><span className="quests-label">Quests</span></th>
@@ -108,7 +124,7 @@ function App() {
                   const earnedXP = calcEarnedXP(earned);
                   return (
                     <tr key={assignment.index}>
-                      <td>{assignment.title}</td>
+                      <td className="assignment-label">{assignment.title}</td>
                       <td>
                         <span className="earned-cards">
                           <input
@@ -117,22 +133,23 @@ function App() {
                             max={assignment.totalCards}
                             value={earned}
                             onChange={(e) => handleChange(assignment.index, e.target.value)}
-                            style={{ width: "60px" }}
                           />
                         </span>
-                        <span className="total-cards"> / {assignment.totalCards}</span>
+                        /<span className="total-cards">{assignment.totalCards}</span>
                       </td>
                       <td>
                         <span className="earned-xp">{earnedXP}</span>
-                        <span className="total-xp"> / {totalXP}</span>
+                        /<span className="total-xp">{totalXP}</span>
                       </td>
                     </tr>
                   );
                 })}
             </tbody>
           </table>
+          </div>
        
-          <table className="missions-table col-md-6">
+          <div className="col-md-6">
+          <table className="missions-table">
             <thead>
               <tr>
                 <th><span className="missions-label">Missions</span></th>
@@ -150,7 +167,7 @@ function App() {
                   const earnedXP = calcEarnedXP(earned);
                   return (
                     <tr key={assignment.index}>
-                      <td>{assignment.title}</td>
+                      <td className="assignment-label">{assignment.title}</td>
                       <td>
                         <span className="earned-cards">
                           <input
@@ -159,29 +176,24 @@ function App() {
                             max={assignment.totalCards}
                             value={earned}
                             onChange={(e) => handleChange(assignment.index, e.target.value)}
-                            style={{ width: "60px" }}
                           />
                         </span>
-                        <span className="total-cards"> / {assignment.totalCards}</span>
+                        /<span className="total-cards">{assignment.totalCards}</span>
                       </td>
                       <td>
                         <span className="earned-xp">{earnedXP}</span>
-                        <span className="total-xp"> / {totalXP}</span>
+                        /<span className="total-xp">{totalXP}</span>
                       </td>
                     </tr>
                   );
                 })}
             </tbody>
           </table>
+          </div>
      
         </div>
 
         <br></br>
-
-        <div className="results-container">
-          <p>Total Earned XP: {totalEarnedXP}</p>
-          <p>Total Possible XP: {totalPossibleXP}</p>
-        </div>
 
       </div>
 

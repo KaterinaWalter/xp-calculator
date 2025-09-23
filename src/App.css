@@ -31,29 +31,27 @@ body {
 h1, h2, h3, th {
   font-family: "Pixelify Sans", sans-serif !important;
   font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: bold;
+  font-weight: 700;
 }
 
 .page-heading {
   color: var(--city-darkest);
-}
-
-.page-description {
-  background: var(--city-dark);
-  color: white;
+  text-shadow: 1px 1px 1px white;
 }
 
 .quests-label {
-  font-family: "Jacquard 24", serif;
   color: var(--sky-purple);
-  font-size: 1.4em;
+  font-weight: 700;
 }
 
 .missions-label {
-  font-family: "Jacquard 24", serif;
   color: var(--sky-pink);
-  font-size: 1.4em;
+  font-weight: 700;
+}
+
+table .quests-label, table .missions-label {
+  font-size: 2em;
+  text-shadow: 1px 1px 1px var(--city-darkest);
 }
 
 footer {
@@ -70,19 +68,110 @@ footer small {
   font-size: 0.6em;
 }
 
+input {
+  width: 50px !important;
+  border-color: var(--city-dark) !important;
+  border-radius: 0.25rem !important;
+  border-style: solid !important;
+  border-width: 1px !important; 
+}
+.total-cards {
+  width: 10px;
+  display: inline-block;
+  color: var(--city-pink-dark);
+}
+.earned-xp, .total-xp {
+  width: 30px;
+  display: inline-block;
+}
+.total-xp {
+  color: var(--city-pink-dark);
+}
+.earned-xp {
+  color: var(--city-purple);
+  border-radius: 0.25rem;
+}
+.assignment-label {
+  width: 300px;
+}
+thead {
+  line-height: 1em;
+}
+th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .tables-container {
   width: 90%;
   margin: auto;
 }
 .tables-container table {
-  background: whitesmoke;
+  background: rgba(255, 255, 255, 0.8);
+  border: 5px solid var(--city-purple);
+  font-size: 0.8em;
+  font-weight: 700;
+  width: 100%;
+  height: 100%;
+}
+
+.info-section {
+  width: 60%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.description-container {
+  padding-top: 14px;
+  padding-bottom: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  display: inline-block;
+  font-size: 0.6em;
+  background: var(--city-dark);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid var(--city-purple);
 }
 
 .results-container {
-  width: 40%;
-  margin: auto;
-  background: whitesmoke;
-  border: 2px solid var(--purple);
-  border-radius: 8px;
+  padding-top: 14px;
+  padding-bottom: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background: var(--city-purple);
+  color: white;
+  font-size: 0.8em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.total-xp-label {
+  font-size: 1.8em;
+  text-shadow: 1px 1px 1px var(--city-darkest);
+  font-family: "Pixelify Sans", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 700;
+}
+.total-xp-value {
+  font-size: 1.5em;
+  font-weight: 700;
+  border-color: var(--city-dark) !important;
+  border-radius: 0.25rem !important;
+  border-style: solid !important;
+  border-width: 1px !important; 
+  color: var(--city-purple);
+  background: white;
+  display: inline-block;
+  padding: 1px 8px;
+  width: 80px;
+}
+
+.debug {
+  border: 2px solid red;
+}
