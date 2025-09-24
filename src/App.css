@@ -147,6 +147,7 @@ th {
   padding-right: 6px;
   background: var(--city-darkest);
   border: 5px solid var(--city-darkest);
+  border-right-width: 10px;
   color: white;
   font-size: 0.8em;
   font-weight: 700;
