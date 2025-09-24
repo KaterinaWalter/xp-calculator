@@ -58,10 +58,13 @@ const assignments = [
 ];
 
 
+
 function App() {
   // State to track earned cards for each assignment
   const [earnedCards, setEarnedCards] = useState(Array(assignments.length).fill(""));
-  
+  // State to track current level
+  const [level, setLevel] = useState(0);
+
   // Function to handle changes in earned cards
   const handleChange = (index, value) => {
     const updatedCards = [...earnedCards];
@@ -77,11 +80,11 @@ function App() {
 
   // Calculate total earned XP
   const totalEarnedXP = earnedCards.reduce((total, cards) => total + calcEarnedXP(cards), 0);
-  
+
   // Calculate total possible XP
   const totalPossibleXP = assignments.reduce((total, assignment) => total + (assignment.totalCards * 50), 0);
-  
-  // Calculate progress 
+
+  // Calculate progress and return level
   const calcProgress = (totalEarnedXP) => {
     const progBar = document.querySelector('#progBar');
     let xp = totalEarnedXP;
@@ -124,12 +127,15 @@ function App() {
     else if (xp >= 100) {
       level = 1;
     }
-    progBar.style.width = `${ (level * 10) }%`
+    if (progBar) {
+      progBar.style.width = `${ (level * 10) }%`;
+    }
+    return level;
   }
 
-  // Update progress bar whenever totalEarnedXP changes
+  // Update progress bar and level whenever totalEarnedXP changes
   useEffect(() => {
-    calcProgress(totalEarnedXP);
+    setLevel(calcProgress(totalEarnedXP));
   }, [totalEarnedXP]);
 
   return (
@@ -139,24 +145,29 @@ function App() {
         
         <Header />
 
-        <div className="info-section row gx-3 gy-1">
+        <div className="info-section row gx-5 gy-1">
           <div className="col-md-6">
               <p className="description-container">
               Enter your <strong>earned cards</strong> from completing required <span className="quests-label">Quests </span>
-              and optional <span className="missions-label">Missions</span> below to calculate your <strong>Total XP</strong> for the course!
-              <em> Each card grants 50 XP.</em>
+              and optional <span className="missions-label">Missions</span> below to calculate your <span className="total-label">Total XP</span> for the course!
+              <br></br><em> Each card grants 50 XP.</em>
               </p>
           </div>
           <div className="col-md-6">
             <div className="results-container">
-              <div className="xp-container"><span className="total-xp-label">TOTAL XP: </span>
-              <span className="total-xp-value">{totalEarnedXP}</span>
-              <span className="total-xp-label">LEVEL: </span>
-              <span className="total-xp-value">10</span>
+              <div className="xp-container">
+                <div>
+                  <span className="total-xp-label">TOTAL XP: </span>
+                  <span className="total-xp-value">{totalEarnedXP}</span>
+                </div>
+                <div>
+                  <span className="total-xp-label">LEVEL: </span>
+                  <span className="level-value">{level}</span>
+                </div>
               </div>
               <div className="progress-container">
             
-                <svg className="progress">
+                <svg className="progress-bar">
                   <defs>
                     <linearGradient id="gradient">
                       <stop offset="0%" stop-color="#FFBEA4" />

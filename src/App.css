@@ -50,6 +50,11 @@ h1, h2, h3, th {
   font-weight: 700;
 }
 
+.total-label {
+  color: var(--sky-orange);
+  font-weight: 700;
+}
+
 table .quests-label, table .missions-label {
   font-size: 2.2em;
   text-shadow: 1px 1px 1px var(--city-darkest);
@@ -126,16 +131,16 @@ th {
 }
 
 .description-container {
-  padding: 4px 6px;
+  padding: 4px 10px;
   display: inline-block;
-  font-size: 0.6em;
+  font-size: 0.75em;
   background: var(--city-dark);
   color: white;
   border: 5px solid var(--city-darkest);
 }
 
 .results-container {
-  background: var(--sky-purple);
+  background: var(--city-dark);
   border: 5px solid var(--city-darkest);
   color: white;
   font-size: 0.8em;
@@ -145,10 +150,18 @@ th {
   padding-bottom: 10px;
 }
 
+.xp-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  
+}
+
 .total-xp-label {
   font-size: 1.5em;
-  text-shadow: 1px 1px 1px white;
-  color: var(--city-purple);
+  text-shadow: 1px 1px 1px var(--city-darkest);
+  color: var(--sky-orange);
   font-family: "Pixelify Sans", sans-serif !important;
   font-optical-sizing: auto;
   line-height: 1.2em;
@@ -159,7 +172,14 @@ th {
   color: white;
   display: inline-block;
   padding: 1px 8px;
-  width: 60px;
+  width: 70px;
+}
+.level-value {
+  font-size: 1.3em;
+  color: white;
+  display: inline-block;
+  padding: 1px 8px;
+  width: 50px;
 }
 
 .debug {
@@ -204,9 +224,11 @@ th {
 	animation: pulsate-fwd 1.5s ease-in-out infinite both;
 }
 
-.progress {
-  width: 100%;
-  height: 30px;
+.progress-bar {
+  width: 90%;
+  height: 50px;
+  margin: auto;
+  margin-top: 4px;
 }
 
 #progBar {
