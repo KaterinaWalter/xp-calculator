@@ -97,7 +97,7 @@ function App() {
               </p>
             </div>
             <div className="results-container col-4">
-              <p><span className="total-xp-label">TOTAL XP: </span>
+              <p><span className="total-xp-label pulsate-fwd">TOTAL XP: </span>
               <span className="total-xp-value">{totalEarnedXP}</span>
               </p>
             </div>
