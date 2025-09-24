@@ -151,10 +151,11 @@ function App() {
             <div className="results-container">
               <div className="xp-container"><span className="total-xp-label">TOTAL XP: </span>
               <span className="total-xp-value">{totalEarnedXP}</span>
+              <span className="total-xp-label">LEVEL: </span>
+              <span className="total-xp-value">10</span>
               </div>
-              <div className="level-container">
-                <span className="total-xp-label">LEVEL: </span>
-                <span className="total-xp-value">currentLevel</span>
+              <div className="progress-container">
+            
                 <svg className="progress">
                   <defs>
                     <linearGradient id="gradient">
